@@ -8,6 +8,8 @@
 
 import UIKit
 
+let userId = "56d088c2fff2d8905ab4d9da"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().barStyle = UIBarStyle.Black
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.1, green:0.69, blue:0.36, alpha:1);
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor();
+        UINavigationBar.appearance().translucent = false;
+        
+        UITabBar.appearance().barTintColor = UIColor(red:0.1, green:0.69, blue:0.36, alpha:1);
+        UITabBar.appearance().tintColor = UIColor.whiteColor();
+        
         return true
     }
 
