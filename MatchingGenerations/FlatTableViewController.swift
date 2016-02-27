@@ -19,6 +19,8 @@ class FlatTableViewController: UITableViewController, UICollectionViewDataSource
 //    var images:NSArray = []
     var images: [UIImage] = []
     
+    @IBOutlet weak var solicitarButton: UIBarButtonItem!
+    
     @IBOutlet weak var descripcioTextView: UITextView!
     @IBOutlet weak var ofereixoTextView: UITextView!
     @IBOutlet weak var necesitoTextView: UITextView!
@@ -30,6 +32,7 @@ class FlatTableViewController: UITableViewController, UICollectionViewDataSource
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         descripcioTextView.text = pis.valueForKey("descripcio") as? String
         var ofereixo = ""
         var necessito = ""
@@ -43,6 +46,20 @@ class FlatTableViewController: UITableViewController, UICollectionViewDataSource
         }
         ofereixoTextView.text = ofereixo
         necesitoTextView.text = necessito
+    }
+    
+   
+    @IBAction func solicitarAction(sender: AnyObject) {
+        
+        let parameters: [String : String] = [
+            "pisId": (pis.valueForKey("_id") as? String)!,
+            "estudiantId": userId
+        ]
+        
+        Alamofire.request(.POST, "http://54.201.234.52/solicitud/save", parameters: parameters, encoding: .JSON)
+        GoogleWearAlert.showAlert(title: "Solicitado", type: .Success)
+        solicitarButton.title = "Solicitado"
+       
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -167,14 +184,6 @@ class FlatTableViewController: UITableViewController, UICollectionViewDataSource
         print(NSURL(string: "http://54.201.234.52/uploads/"+(self.imatges[indexPath.item] as! String))!)
         
         cell.imageView.af_setImageWithURL(NSURL(string: "http://54.201.234.52/uploads/"+(self.imatges[indexPath.item] as! String))!)
-//        let url =  "http://54.201.234.52/uploads/"+(self.imatges[indexPath.item] as! String)
-        
-        let url = NSURL(string: "http://54.201.234.52/uploads/"+(self.imatges[indexPath.item] as! String))!
-//        Alamofire.request(.GET,url).response { request, response, data, error in
-//            self.images.addObject(UIImage(data: data, scale:1))
-//        }
-        
-
         
         return cell
     }

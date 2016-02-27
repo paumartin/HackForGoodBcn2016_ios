@@ -183,6 +183,7 @@
 				TargetAttributes = {
 					0C4EC4C11C8081FF005AEF37 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7XPNZVMTQ2;
 					};
 				};
 			};
@@ -398,6 +399,7 @@
 			baseConfigurationReference = 2C5ED4079E949DCE15192E68 /* Pods-MatchingGenerations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MatchingGenerations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alcapone.MatchingGenerations;
@@ -410,6 +412,7 @@
 			baseConfigurationReference = 10418A807B47C9DC038A30DC /* Pods-MatchingGenerations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MatchingGenerations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alcapone.MatchingGenerations;
